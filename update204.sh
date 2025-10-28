@@ -7,5 +7,5 @@ for ID in $(seq 1 30); do
   echo "GOVERNANCE_PROPOSER_PAYLOAD_ADDRESS=0xDCd9DdeAbEF70108cE02576df1eB333c4244C666" >> .env
   docker compose up -d
   cd
-  sleep $(( RANDOM % 301 + 900 ))
+  sleep $(( RANDOM % 301 + 600 ))
 done
