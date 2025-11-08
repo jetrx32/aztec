@@ -14,7 +14,7 @@ cp p2p-private-key212bak data/p2p-private-key
 sed -i 's|aztecprotocol/aztec:[^"]*|aztecprotocol/aztec:2.1.2|' docker-compose.yml && \
 sed -i '/GOVERNANCE_PROPOSER_PAYLOAD_ADDRESS/d' .env
 mv keys/keystore.json keystore.jsonbak
-FEE_RECIPIENT=$(cat keystore.json | grep feeRecipient | cut -d'"' -f4)
+FEE_RECIPIENT=$(cat keystore.jsonbak | grep feeRecipient | cut -d'"' -f4)
 wget -O keys/keystore.json https://raw.githubusercontent.com/jetrx32/aztec/refs/heads/main/keystore.json
 sed -i 's/ETH_PK/'${PK}'/' keys/keystore.json
 sed -i 's/BLS_PK/'${BLS_PK}'/' keys/keystore.json
